@@ -25,10 +25,10 @@ class _TableState extends widgets.State<Table> {
     widgets.TableRow header = widgets.TableRow(
       children: widget.columns.map((column) {
         return widgets.Container(
-          padding: const widgets.EdgeInsets.all(16),
+          padding: const widgets.EdgeInsets.all(4),
           child: widgets.Text(
             column.title,
-            style: const widgets.TextStyle(fontWeight: widgets.FontWeight.w500),
+            style: const widgets.TextStyle(fontWeight: widgets.FontWeight.w500,fontSize: 8),
           ),
         );
       }).toList(),
@@ -47,7 +47,7 @@ class _TableState extends widgets.State<Table> {
             return widgets.MouseRegion(
               child: widgets.GestureDetector(
                 child: widgets.Container(
-                  padding: const widgets.EdgeInsets.all(16),
+                  padding: const widgets.EdgeInsets.all(4),
                   child: _buildCell(widget.dataSource[i], column),
                 ),
               ),
@@ -92,7 +92,7 @@ class _TableState extends widgets.State<Table> {
         widgets.Text(
           column.dataIndex != null
               ? data.toJson()[column.dataIndex].toString()
-              : '',
+              : '', style: const widgets.TextStyle(fontSize: 8),
         );
   }
 }
